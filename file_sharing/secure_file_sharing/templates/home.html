@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure File Sharing System</title>
+    <link rel="stylesheet" type="text/css" href="/home/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Secure File Sharing System</h1>
+        <div id="user-selection">
+            <button onclick="showOpsLogin()">Operations User Login</button>
+            <button onclick="showClientSignUp()">Client User Sign Up</button>
+            <button onclick="showClientLogin()">Client User Login</button>
+        </div>
+        
+        <div id="ops-login" class="form-container">
+            <h2>Operations User Login</h2>
+            <form id="opsLoginForm">
+                <label for="ops-username">Username:</label>
+                <input type="text" id="ops-username" name="username" required>
+                <label for="ops-password">Password:</label>
+                <input type="password" id="ops-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="ops-upload" class="hidden">
+                <h3>Upload File</h3>
+                <form id="uploadForm">
+                    <input type="file" id="file" name="file" accept=".pptx,.docx,.xlsx" required>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="client-signup" class="form-container hidden">
+            <h2>Client User Sign Up</h2>
+            <form id="clientSignUpForm">
+                <label for="client-email">Email:</label>
+                <input type="email" id="client-email" name="email" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        
+        <div id="client-login" class="form-container hidden">
+            <h2>Client User Login</h2>
+            <form id="clientLoginForm">
+                <label for="client-username">Username:</label>
+                <input type="text" id="client-username" name="username" required>
+                <label for="client-password">Password:</label>
+                <input type="password" id="client-password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="client-actions" class="hidden">
+                <button onclick="listFiles()">List All Files</button>
+                <div id="file-list"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/home/scripts.js"></script>
+</body>
+</html>
